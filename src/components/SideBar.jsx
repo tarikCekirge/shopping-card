@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import BasketItem from "./BasketItem";
 import { IoMdClose } from "react-icons/io";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { MyContext } from "../context/MyContext";
+import { CartContext } from "../context/CartContext";
 
-const SideBar = ({ cart, removeCart, isSideOpen, SetIsSideOpen }) => {
-  const { myState, SetMyState } = useContext(MyContext);
+const SideBar = ({ isSideOpen, SetIsSideOpen }) => {
+  const { cart, removeCart } = useContext(CartContext);
   const total = cart.reduce((acc, item) => acc + item.price, 0);
   if (cart.length === 0) {
     return;
@@ -14,7 +14,7 @@ const SideBar = ({ cart, removeCart, isSideOpen, SetIsSideOpen }) => {
     <>
       <div className={`fixed ${isSideOpen ? " right-0" : "-right-[400px]"} top-0 w-[400px] h-screen bg-white p-3 shadow-2xl  transition-all ease-linear duration-150`}>
         <div className="flex items-center justify-between">
-          <h3 className="font-bold text-xl text-blue-600">{myState}</h3>
+          <h3 className="font-bold text-xl text-blue-600">Basket</h3>
           <button onClick={() => SetIsSideOpen(false)}>
             <IoMdClose className="text-2xl text-gray-600" />
           </button>

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
 
-const Header = ({ cart, isSideOpen, SetIsSideOpen }) => {
+const Header = ({ isSideOpen, SetIsSideOpen }) => {
+  const { cart } = useContext(CartContext);
   const handleToggleSideBar = () => {
     SetIsSideOpen((prev) => !prev);
-    console.log("toggle");
     console.log(isSideOpen);
   };
   return (
