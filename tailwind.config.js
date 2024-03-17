@@ -11,7 +11,7 @@ export default {
         padding: '2rem',
       },
       gridTemplateColumns: {
-        'card': 'repeat(auto-fit, minmax(300px, 1fr))',
+        'cart': 'repeat(auto-fit, minmax(300px, 1fr))',
       },
     },
   },

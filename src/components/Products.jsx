@@ -1,5 +1,5 @@
 import React from "react";
-import ProductItem from "./ProductItem";
+import CartItem from "./CartItem";
 
 const Products = (props) => {
   const productList = props.PRODUCTS;
@@ -7,10 +7,10 @@ const Products = (props) => {
     <>
       <section>
         <div className="container">
-          <div className="grid grid-cols-card gap-4 p-3">
-            {productList.map((product) => {
-              return <ProductItem key={product.id} product={product} />;
-            })}
+          <div className="grid grid-cols-cart gap-4 p-3">
+            {productList.map((product) => (
+              <CartItem key={product.id} product={product} cart={props.cart} setCart={props.setCart} />
+            ))}
           </div>
         </div>
       </section>
